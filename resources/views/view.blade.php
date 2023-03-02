@@ -13,7 +13,14 @@
           <h3>วันที่ฉาย : {{ date('d-m-Y', strtotime($movie->movie_release_date)); }}</h3>
         </div>
       </div>
-      <h1 id="home">รีวิว</h1>
+      <div class="row">
+        <div class="col-6">
+          <h1>รีวิว</h1>
+        </div>
+        <div class="col-6" style="text-align: end">
+          <h1>คะแนนรีวิวเฉลี่ย ({{ $avg }})</h1>
+        </div>
+      </div>
       <div class="container">
         @foreach($comments as $comment)
         <div class="row border border-success border border-2 rounded pt-2 mt-2">

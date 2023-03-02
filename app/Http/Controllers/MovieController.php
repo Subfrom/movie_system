@@ -53,8 +53,10 @@ class MovieController extends Controller
             ->where('movie_id', $id)
             ->get();
 
+        $avg = Comment::where('movie_id', $id)->avg('comment_score');
+
         
-        return view('view', compact('movie', 'comments'));
+        return view('view', compact('movie', 'comments', 'avg'));
     }
 
     /**
